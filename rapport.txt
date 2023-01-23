@@ -1,0 +1,188 @@
+[1, 3, 6, 7, 0, 4, 5, 8, 2]
+Recherche de solution en largeur
+solution trouvée en 12  coups
+temps de resolution  0.10802162199979648  s
+nombre de noeds visitees  3366
+Recherche de solution en profondeur
+solution trouvée en 7646  coups
+temps de resolution  0.35200057399924845  s
+nombre de noeds visitees  15341
+Recherche de solution en a*
+solution trouvée en 12  coups
+solution trouvée en 12  coups
+temps de resolution  0.012239258001500275  s
+nombre de noeds visitees  26
+coup 0  :  [1, 3, 6, 7, 0, 4, 5, 8, 2]
+coup 1  :  [1, 3, 6, 7, 4, 0, 5, 8, 2]
+coup 2  :  [1, 3, 6, 7, 4, 2, 5, 8, 0]
+coup 3  :  [1, 3, 6, 7, 4, 2, 5, 0, 8]
+coup 4  :  [1, 3, 6, 7, 4, 2, 0, 5, 8]
+coup 5  :  [1, 3, 6, 0, 4, 2, 7, 5, 8]
+coup 6  :  [1, 3, 6, 4, 0, 2, 7, 5, 8]
+coup 7  :  [1, 3, 6, 4, 2, 0, 7, 5, 8]
+coup 8  :  [1, 3, 0, 4, 2, 6, 7, 5, 8]
+coup 9  :  [1, 0, 3, 4, 2, 6, 7, 5, 8]
+coup 10  :  [1, 2, 3, 4, 0, 6, 7, 5, 8]
+coup 11  :  [1, 2, 3, 4, 5, 6, 7, 0, 8]
+coup 12  :  [1, 2, 3, 4, 5, 6, 7, 8, 0]
+fin
+[8, 1, 4, 6, 0, 7, 5, 3, 2]
+Recherche de solution en largeur
+solution trouvée en 24  coups
+temps de resolution  5.520608860999346  s
+nombre de noeds visitees  160510
+Recherche de solution en profondeur
+solution trouvée en 61588  coups
+temps de resolution  3.044274220999796  s
+nombre de noeds visitees  125722
+Recherche de solution en a*
+solution trouvée en 24  coups
+solution trouvée en 24  coups
+temps de resolution  41.83626839399949  s
+nombre de noeds visitees  1998
+coup 0  :  [8, 1, 4, 6, 0, 7, 5, 3, 2]
+coup 1  :  [8, 1, 4, 6, 7, 0, 5, 3, 2]
+coup 2  :  [8, 1, 4, 6, 7, 2, 5, 3, 0]
+coup 3  :  [8, 1, 4, 6, 7, 2, 5, 0, 3]
+coup 4  :  [8, 1, 4, 6, 7, 2, 0, 5, 3]
+coup 5  :  [8, 1, 4, 0, 7, 2, 6, 5, 3]
+coup 6  :  [0, 1, 4, 8, 7, 2, 6, 5, 3]
+coup 7  :  [1, 0, 4, 8, 7, 2, 6, 5, 3]
+coup 8  :  [1, 4, 0, 8, 7, 2, 6, 5, 3]
+coup 9  :  [1, 4, 2, 8, 7, 0, 6, 5, 3]
+coup 10  :  [1, 4, 2, 8, 7, 3, 6, 5, 0]
+coup 11  :  [1, 4, 2, 8, 7, 3, 6, 0, 5]
+coup 12  :  [1, 4, 2, 8, 7, 3, 0, 6, 5]
+coup 13  :  [1, 4, 2, 0, 7, 3, 8, 6, 5]
+coup 14  :  [1, 4, 2, 7, 0, 3, 8, 6, 5]
+coup 15  :  [1, 0, 2, 7, 4, 3, 8, 6, 5]
+coup 16  :  [1, 2, 0, 7, 4, 3, 8, 6, 5]
+coup 17  :  [1, 2, 3, 7, 4, 0, 8, 6, 5]
+coup 18  :  [1, 2, 3, 7, 4, 5, 8, 6, 0]
+coup 19  :  [1, 2, 3, 7, 4, 5, 8, 0, 6]
+coup 20  :  [1, 2, 3, 7, 4, 5, 0, 8, 6]
+coup 21  :  [1, 2, 3, 0, 4, 5, 7, 8, 6]
+coup 22  :  [1, 2, 3, 4, 0, 5, 7, 8, 6]
+coup 23  :  [1, 2, 3, 4, 5, 0, 7, 8, 6]
+coup 24  :  [1, 2, 3, 4, 5, 6, 7, 8, 0]
+fin
+[6, 1, 8, 4, 7, 2, 5, 3, 0]
+Recherche de solution en largeur
+solution trouvée en 22  coups
+temps de resolution  3.2198843700025463  s
+nombre de noeds visitees  97381
+Recherche de solution en profondeur
+solution trouvée en 64238  coups
+temps de resolution  3.044484972997452  s
+nombre de noeds visitees  132364
+Recherche de solution en a*
+solution trouvée en 22  coups
+solution trouvée en 22  coups
+temps de resolution  3.7101869100006297  s
+nombre de noeds visitees  594
+coup 0  :  [6, 1, 8, 4, 7, 2, 5, 3, 0]
+coup 1  :  [6, 1, 8, 4, 7, 0, 5, 3, 2]
+coup 2  :  [6, 1, 0, 4, 7, 8, 5, 3, 2]
+coup 3  :  [6, 0, 1, 4, 7, 8, 5, 3, 2]
+coup 4  :  [0, 6, 1, 4, 7, 8, 5, 3, 2]
+coup 5  :  [4, 6, 1, 0, 7, 8, 5, 3, 2]
+coup 6  :  [4, 6, 1, 7, 0, 8, 5, 3, 2]
+coup 7  :  [4, 6, 1, 7, 3, 8, 5, 0, 2]
+coup 8  :  [4, 6, 1, 7, 3, 8, 5, 2, 0]
+coup 9  :  [4, 6, 1, 7, 3, 0, 5, 2, 8]
+coup 10  :  [4, 6, 1, 7, 0, 3, 5, 2, 8]
+coup 11  :  [4, 0, 1, 7, 6, 3, 5, 2, 8]
+coup 12  :  [4, 1, 0, 7, 6, 3, 5, 2, 8]
+coup 13  :  [4, 1, 3, 7, 6, 0, 5, 2, 8]
+coup 14  :  [4, 1, 3, 7, 0, 6, 5, 2, 8]
+coup 15  :  [4, 1, 3, 7, 2, 6, 5, 0, 8]
+coup 16  :  [4, 1, 3, 7, 2, 6, 0, 5, 8]
+coup 17  :  [4, 1, 3, 0, 2, 6, 7, 5, 8]
+coup 18  :  [0, 1, 3, 4, 2, 6, 7, 5, 8]
+coup 19  :  [1, 0, 3, 4, 2, 6, 7, 5, 8]
+coup 20  :  [1, 2, 3, 4, 0, 6, 7, 5, 8]
+coup 21  :  [1, 2, 3, 4, 5, 6, 7, 0, 8]
+coup 22  :  [1, 2, 3, 4, 5, 6, 7, 8, 0]
+fin
+[4, 1, 3, 2, 0, 6, 7, 5, 8]
+Recherche de solution en largeur
+solution trouvée en 6  coups
+temps de resolution  0.005767652997747064  s
+nombre de noeds visitees  155
+Recherche de solution en profondeur
+solution trouvée en 67206  coups
+temps de resolution  3.534459923997929  s
+nombre de noeds visitees  140235
+Recherche de solution en a*
+solution trouvée en 6  coups
+solution trouvée en 6  coups
+temps de resolution  0.001288216000830289  s
+nombre de noeds visitees  6
+coup 0  :  [4, 1, 3, 2, 0, 6, 7, 5, 8]
+coup 1  :  [4, 1, 3, 0, 2, 6, 7, 5, 8]
+coup 2  :  [0, 1, 3, 4, 2, 6, 7, 5, 8]
+coup 3  :  [1, 0, 3, 4, 2, 6, 7, 5, 8]
+coup 4  :  [1, 2, 3, 4, 0, 6, 7, 5, 8]
+coup 5  :  [1, 2, 3, 4, 5, 6, 7, 0, 8]
+coup 6  :  [1, 2, 3, 4, 5, 6, 7, 8, 0]
+fin
+[4, 8, 1, 7, 3, 5, 0, 6, 2]
+Recherche de solution en largeur
+solution trouvée en 18  coups
+temps de resolution  0.6704083740041824  s
+nombre de noeds visitees  30369
+Recherche de solution en profondeur
+solution trouvée en 37574  coups
+temps de resolution  1.5217669659978128  s
+nombre de noeds visitees  75430
+Recherche de solution en a*
+solution trouvée en 18  coups
+solution trouvée en 18  coups
+temps de resolution  0.15937012500216952  s
+nombre de noeds visitees  118
+coup 0  :  [4, 8, 1, 7, 3, 5, 0, 6, 2]
+coup 1  :  [4, 8, 1, 0, 3, 5, 7, 6, 2]
+coup 2  :  [4, 8, 1, 3, 0, 5, 7, 6, 2]
+coup 3  :  [4, 0, 1, 3, 8, 5, 7, 6, 2]
+coup 4  :  [4, 1, 0, 3, 8, 5, 7, 6, 2]
+coup 5  :  [4, 1, 5, 3, 8, 0, 7, 6, 2]
+coup 6  :  [4, 1, 5, 3, 8, 2, 7, 6, 0]
+coup 7  :  [4, 1, 5, 3, 8, 2, 7, 0, 6]
+coup 8  :  [4, 1, 5, 3, 0, 2, 7, 8, 6]
+coup 9  :  [4, 1, 5, 0, 3, 2, 7, 8, 6]
+coup 10  :  [0, 1, 5, 4, 3, 2, 7, 8, 6]
+coup 11  :  [1, 0, 5, 4, 3, 2, 7, 8, 6]
+coup 12  :  [1, 5, 0, 4, 3, 2, 7, 8, 6]
+coup 13  :  [1, 5, 2, 4, 3, 0, 7, 8, 6]
+coup 14  :  [1, 5, 2, 4, 0, 3, 7, 8, 6]
+coup 15  :  [1, 0, 2, 4, 5, 3, 7, 8, 6]
+coup 16  :  [1, 2, 0, 4, 5, 3, 7, 8, 6]
+coup 17  :  [1, 2, 3, 4, 5, 0, 7, 8, 6]
+coup 18  :  [1, 2, 3, 4, 5, 6, 7, 8, 0]
+fin
+[2, 5, 4, 1, 0, 3, 7, 8, 6]
+Recherche de solution en largeur
+solution trouvée en 10  coups
+temps de resolution  0.14294787400285713  s
+nombre de noeds visitees  981
+Recherche de solution en profondeur
+solution trouvée en 51632  coups
+temps de resolution  14.762124615001085  s
+nombre de noeds visitees  104408
+Recherche de solution en a*
+solution trouvée en 10  coups
+solution trouvée en 10  coups
+temps de resolution  12.27189600100246  s
+nombre de noeds visitees  26
+coup 0  :  [2, 5, 4, 1, 0, 3, 7, 8, 6]
+coup 1  :  [2, 0, 4, 1, 5, 3, 7, 8, 6]
+coup 2  :  [2, 4, 0, 1, 5, 3, 7, 8, 6]
+coup 3  :  [2, 4, 3, 1, 5, 0, 7, 8, 6]
+coup 4  :  [2, 4, 3, 1, 0, 5, 7, 8, 6]
+coup 5  :  [2, 0, 3, 1, 4, 5, 7, 8, 6]
+coup 6  :  [0, 2, 3, 1, 4, 5, 7, 8, 6]
+coup 7  :  [1, 2, 3, 0, 4, 5, 7, 8, 6]
+coup 8  :  [1, 2, 3, 4, 0, 5, 7, 8, 6]
+coup 9  :  [1, 2, 3, 4, 5, 0, 7, 8, 6]
+coup 10  :  [1, 2, 3, 4, 5, 6, 7, 8, 0]
+fin
