@@ -56,6 +56,7 @@ class Solver:
         queue = collections.deque([Node(self.start)])
         seen = set()
         seen.add(queue[0].state)
+        visitee = 0
         while queue:
             node = queue.pop()
             if node.solved:
@@ -65,6 +66,7 @@ class Solver:
                 print("temps de resolution ", end_time-start_time, " s")
                 print("nombre de noeds visitees ", len(seen))
                 return z
+            visitee+=1
             for move, action in node.actions:
                 child = Node(move(), node, action)
                 if child.state not in seen:
@@ -77,6 +79,7 @@ class Solver:
         queue = collections.deque([Node(self.start)])
         seen = set()
         seen.add(queue[0].state)
+        visitee = 0
         while queue:
             node = queue.pop()
             if node.solved:
@@ -84,14 +87,19 @@ class Solver:
                 z = list(node.path)
                 print("solution trouvée en", len(z) - 1, " coups")
                 print("temps de resolution ", end_time-start_time, " s")
-                print("nombre de noeds visitees ", len(seen))
+                print("nombre de noeds visitees ", visitee)
                 return z
-            if node.g < 50:
+            visitee+=1
+            if node.g < 40:
                 for move, action in node.actions:
                     child = Node(move(), node, action)
                     if child.state not in seen:
                         queue.append(child)
                         seen.add(child.state)
+        end_time = time.perf_counter()
+        print("aucun solution trouvee")
+        print("temps de recherche ", end_time-start_time, " s")
+        print("nombre de noeds visitees ", visitee)
             
                 
 
@@ -112,6 +120,7 @@ class Solver:
                 print("nombre de noeds visitees ", len(ferme))
                 return z
             ouvert.remove(node)
+            ouvertSet.remove(node.state)
             ferme.append(node)
             fermeSet.add(node.state)
             for move, action in node.actions:
@@ -124,8 +133,9 @@ class Solver:
                             break
                 elif child.state in fermeSet:
                     continue
-                ouvert.append(child)
-                ouvertSet.add(child.state)
+                else :
+                    ouvert.append(child)
+                    ouvertSet.add(child.state)
                 
         print("not found")
 
@@ -136,7 +146,7 @@ class Solver:
         print("coup", i, " : ", x)
         node.puzzle.afficher2(x)
         if p:
-            self.fenetre.after(200, self.aff5, p, i + 1)
+            self.fenetre.after(500, self.aff5, p, i + 1)
         else:
             print("fin")
 

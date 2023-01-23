@@ -14,13 +14,14 @@ fenetre['bg'] = 'white'
 fenetre.title('Tp AI')
 puzzle = Puzzle(board, can, Lph)
 
-
 def melanger():
     global puzzle
     puzzle = puzzle.shuffle()
     solver = Solver(puzzle,fenetre)
     solution_largeur = solver.solve_largeur()
     solution_profondeur = solver.solve_profondeur()
+    if not solution_profondeur:
+        solution_profondeur= [0 for i in range(50)]
     solution_a = solver.solve_a()
     if len(solution_a) < len(solution_profondeur):
         if len(solution_a) < len(solution_largeur):
