@@ -5,22 +5,25 @@ import time
 from tkinter import *
 
 
+#Création des graphes et noeuds
 class Node:
 
     def __init__(self, puzzle, parent=None, action=None):
         self.puzzle = puzzle
         self.parent = parent
         self.action = action
+        #cout de déplacement = 1
         if parent:
             self.g = parent.g + 1
         else:
             self.g = 0
+        #heuristique utilisé : h2 - manhattan
         self.h = puzzle.h2()
-
+    #état actuel
     @property
     def state(self):
         return str(self.puzzle)
-
+    #chemin de résolution
     @property
     def path(self):
         node, p = self, []
@@ -28,28 +31,28 @@ class Node:
             p.append(node)
             node = node.parent
         yield from reversed(p)
-
+    #retourne résultat
     @property
     def solved(self):
         return self.puzzle.solved
-
+    #retourne les opérateurs
     @property
     def actions(self):
         return self.puzzle.actions
-
+    #affichage g et h sur console
     def __str__(self):
         return str(self.puzzle) + ' ,g:' + str(self.g) + ' ,h:' + str(self.h)
-
+    #calcul cout a*
     def f(self):
         return self.g + self.h
 
-
+#Résolution par les 3 méthodes de recherche
 class Solver:
 
     def __init__(self, start, fenetre):
         self.start = start
         self.fenetre = fenetre
-
+    #résolution par largeur
     def solve_largeur(self):
         print("Recherche de solution en largeur")
         start_time = time.perf_counter()
@@ -72,7 +75,7 @@ class Solver:
                 if child.state not in seen:
                     queue.appendleft(child)
                     seen.add(child.state)
-
+    #résolution par profondeur limitée
     def solve_profondeur(self):
         print("Recherche de solution en profondeur")
         start_time = time.perf_counter()
@@ -90,7 +93,8 @@ class Solver:
                 print("nombre de noeds visitees ", visitee)
                 return z
             visitee+=1
-            if node.g < 40:
+            #optimisation : profondeur limité à 50
+            if node.g < 50:
                 for move, action in node.actions:
                     child = Node(move(), node, action)
                     if child.state not in seen:
@@ -102,7 +106,7 @@ class Solver:
         print("nombre de noeds visitees ", visitee)
             
                 
-
+    #résolution par A*
     def solve_a(self):
         print("Recherche de solution en a*")
         start_time = time.perf_counter()
@@ -138,7 +142,7 @@ class Solver:
                     ouvertSet.add(child.state)
                 
         print("not found")
-
+    #affichage résultat optimale parmi les 3 trouvées
     def aff5(self, p, i=1):
         node = p[0]
         p = p[1:]
@@ -150,16 +154,15 @@ class Solver:
         else:
             print("fin")
 
-
+#Les états des noeuds
 class Puzzle:
 
     def __init__(self, board, root, Lph):
         self.width = len(board[0])
         self.board = board
-        # self.top = tkinter.Toplevel(root)
         self.can = root
         self.Lph = Lph
-
+    #Etat but
     @property
     def solved(self):
 
@@ -174,6 +177,7 @@ class Puzzle:
             sol = False
         return sol
 
+    #Les Opérateurs de recherche
     @property
     def actions(self):
         def create_move(at, to):
@@ -193,7 +197,7 @@ class Puzzle:
                     move = create_move((i, j), (r, c)), action
                     moves.append(move)
         return moves
-
+    #Fonction de mélange des cases
     def shuffle(self):
         puzzle = self
         for k in range(50):
@@ -204,20 +208,20 @@ class Puzzle:
         self = puzzle
         puzzle.board = self.board
         return puzzle
-
+    #fonction pour copier l'état actuel
     def copy(self):
         board = []
         for row in self.board:
             board.append([x for x in row])
         return Puzzle(board, self.can, self.Lph)
-
+    #fonction pour déplacer les cases / passer aux états suivants 
     def move(self, at, to):
         copy = self.copy()
         i, j = at
         r, c = to
         copy.board[i][j], copy.board[r][c] = copy.board[r][c], copy.board[i][j]
         return copy
-
+    #fonction d'affichage graphique
     def afficher2(self, liste1):
         "afficher les images sur le canvas"
         for k in range(len(liste1)):
@@ -225,18 +229,13 @@ class Puzzle:
                                         image=self.Lph[0])
             aff = self.can.create_image((30 + 150 * (k % self.width)), 30 + (150 * (k // self.width)), anchor=NW,
                                         image=self.Lph[liste1[k]])
-
-    def pprint(self):
-        for row in self.board:
-            print(row)
-        print()
-
+    #fonction de conversion d'une matrice vers une liste
     def convL(self):
         L = []
         for row in self.board:
             L.extend(row)
         return L
-
+    #heuristique de hamming : calculant les cases mal placées
     def h(self):
         h = -1
         i = 0
@@ -248,7 +247,7 @@ class Puzzle:
                 j += 1
             i += 1
         return h
-
+    #heuristique de manhattan : calculant la distance vers l'état but
     def h2(self):
         h = 0
         i = 0
@@ -262,7 +261,7 @@ class Puzzle:
                 j += 1
             i += 1
         return h
-
+#des fonctions d'affichage
     def __str__(self):
         return ''.join(map(str, self))
 
